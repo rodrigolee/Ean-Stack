@@ -1,0 +1,21 @@
+<h1>Mini mean store</h1>
+<h2>Products</h2>
+<ul>
+  <li *ngFor="let product of product"><input type="text" name="product-name" [(ngModel)]="product.name"><button (click)="updateProduct(product)">Save</button> <button (click)="deleteProduct(product)">Delete</button></li>
+</ul>
+<p>Create a new product: <input type="text" name="product_name" [(ngModel)]="product_name"><button (click)="createProduct(product_name)">Save</button></p>
+
+<h2>User info</h2>
+
+<h3>Users</h3>
+<ul>
+<li *ngFor="let user of users"><input type="text" name="user-name" [(ngModel)]="user.name"> {{user.work}} {{user.address}} {{user.email}} {{user.dob}} {{user.city}} {{user.optedin}}<button (click)="updateUser(user)">Save</button> <button (click)="deleteUser(user)">Delete</button></li>
+</ul>
+<p>Create a new user: <input type="text" name="user_name" [(ngModel)]="user_name">
+Workplace: <input type="text" name="user_name" [(ngModel)]="user_work">
+Address: <input type="text" name="user_address" [(ngModel)]="user_address">  
+Email:<input type="text" name="user_email" [(ngModel)]="user_email">
+DOB: <input type="date" name="user_dob" [(ngModel)]="user_dob">
+City: <input type="text" name="user_city" [(ngModel)]="user_city">
+
+  <button (click)="createUser(user.name, user.work, user.address, user.email, user.dob, user.city)">Save</button></p>
